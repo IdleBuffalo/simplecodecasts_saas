@@ -16,7 +16,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to 'SaaS', root_path, class: 'navbar-brand' %> <!--Ruby code with erb tag, that's why we put extension html.erb-->
+      <%= link_to 'Dark Bean', root_path, class: 'navbar-brand' %> <!--Ruby code with erb tag, that's why we put extension html.erb-->
     </div>
     
     <div class="collapse navbar-collapse" id="main-nav-collapse">
@@ -28,8 +28,9 @@
   </div>
 </nav>
   
-
-<%= yield %>
+<div class="container"> <!-- added container class with bootstrap to fix alignment -->
+  <%= yield %> <!-- yield replaces whatever is on the pages/ and root_path link to it -->
+</div>
 
 </body>
 </html>
