@@ -16,12 +16,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to 'SaaS', root_path, class: 'navbar-brand' %>
+      <%= link_to 'SaaS', root_path, class: 'navbar-brand' %> <!--Ruby code with erb tag, that's why we put extension html.erb-->
     </div>
     
     <div class="collapse navbar-collapse" id="main-nav-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "About", "#" %></li>
+        <li><%= link_to "About", about_path %></li> <!-- hardcoding is not a good practice, so /about link is not a good idea. 
+        It's better to go to routes under config file and code path there. Take advantage to prefixes. check with rake routes in terminal -->
       </ul>
     </div><!-- /.navbar-collapse -->
   </div>
