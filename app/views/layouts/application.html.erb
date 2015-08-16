@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SimplecodecastsSaas</title>
+  <title>Coffee Snobs SaaS</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -16,7 +16,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to 'Dark Bean', root_path, class: 'navbar-brand' %> <!--Ruby code with erb tag, that's why we put extension html.erb-->
+      
+      <%= link_to root_path, class: 'navbar-brand' do %>
+      <i class='fa fa-coffee'></i> <!-- just copy navbar-brand class to style and align it correctly -->
+       <!--Ruby code with erb tag, that's why we put extension html.erb-->
+       Coffee Snobs
+      <% end %>
     </div>
     
     <div class="collapse navbar-collapse" id="main-nav-collapse">
