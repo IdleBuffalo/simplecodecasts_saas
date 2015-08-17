@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  resources :contacts
-  get '/about' => 'pages#about'
-  root 'pages#home'
+  resources :contacts # Shorthand way of generating a bunch of url definitions - just check with "bundle exec rake routes"
+  #1. Web Server (WEbrick in this case catches Http req and notifies routes.rb)
+  #2. routes.rb tells Contacts_Controller.rb to run the 'new' action
+  #3. Contacts_Controller.rb checks Views folder for HTML file with same 'new' name
+  #4. Contacts_Controller.rb' 'new' action sets a variable called @contact for use in the New.html.erb view file
+  #5. Contacts_Controller.rb sends all gathered HTML back to Webrick
+  #6. Webrick sends back HTTP response containing all necessary HTML for the browser to render the page
+  get '/about' => 'pages#about' #this one is manually defined
+  root 'pages#home' #and this one too
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

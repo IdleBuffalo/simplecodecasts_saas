@@ -27,7 +27,8 @@
     <div class="collapse navbar-collapse" id="main-nav-collapse">
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "About", about_path %></li> <!-- hardcoding is not a good practice, so /about link is not a good idea. 
-        It's better to go to routes under config file and code path there. Take advantage to prefixes. check with rake routes in terminal -->
+          It's better to go to routes under config file and code path there. Take advantage to prefixes. check with rake routes in terminal -->
+        <li><%= link_to "Contact Us", new_contact_path %></li> 
       </ul>
     </div><!-- /.navbar-collapse -->
   </div>
@@ -35,7 +36,9 @@
   
 <div class="container"> <!-- added container class with bootstrap to fix alignment -->
   <%= yield %> <!-- yield replaces whatever is on the pages/ and root_path link to it -->
+
 </div>
+
 
 </body>
 </html>
