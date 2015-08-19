@@ -35,6 +35,9 @@
 </nav>
   
 <div class="container"> <!-- added container class with bootstrap to fix alignment -->
+  <% flash.each do |key, value| %>
+    <%= content_tag :div, value, class: "alert alert-#{key}" %>
+  <% end %>
   <%= yield %> <!-- yield replaces whatever is on the pages/ and root_path link to it -->
 
 </div>
