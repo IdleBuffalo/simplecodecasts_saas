@@ -8,7 +8,14 @@ class ContactsController < ApplicationController
    def create
       @contact = Contact.new(contact_params)
       
-      if @contact.save 
+      if @contact.save
+         name = params[:contact][:name] # hash syntax that translates into whatever was inputed in Name in contact form
+         email = params[:contact][:email]
+         body = params[:contact][:comments]
+         
+         
+         ContactMailer.contact_email(name, email, body).deliver
+         
          flash[:success] = "Message sent."
          redirect_to new_contact_path #redirects user to new contact form ... check with bundle exec rake routes
       else
