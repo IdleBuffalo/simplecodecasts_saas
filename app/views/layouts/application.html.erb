@@ -25,6 +25,15 @@
     </div>
     
     <div class="collapse navbar-collapse" id="main-nav-collapse">
+      <div class='nav navbar-nav navbar-right'>
+        <% if current_user %> <!-- test if user is logged in or not equal sign in ruby code means it will show up in HTML page -->
+          <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-primary navbar-btn' %>
+        <% else %>
+          <%= link_to "Log In", new_user_session_path, class: 'btn btn-primary navbar-btn', method: :get %>
+          <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-success navbar-btn', method: :get %>
+        <% end %>  
+      </div>
+      
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "About", about_path %></li> <!-- hardcoding is not a good practice, so /about link is not a good idea. 
           It's better to go to routes under config file and code path there. Take advantage to prefixes. check with rake routes in terminal -->
