@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations' }
   resources :contacts # Shorthand way of generating a bunch of url definitions - just check with "bundle exec rake routes"
   #1. Web Server (WEbrick in this case catches Http req and notifies routes.rb)
   #2. routes.rb tells Contacts_Controller.rb to run the 'new' action
